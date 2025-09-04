@@ -3,7 +3,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 
 import { redis } from '~/lib/redis'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs' //by=>friday
 
 export async function GET(req: NextRequest) {
   const ratelimit = new Ratelimit({

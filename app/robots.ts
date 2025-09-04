@@ -14,7 +14,7 @@ export default function robots() {
   }
 }
 
-export const runtime = 'edge'
+export const runtime = 'nodejs' //by=>friday
 export const revalidate = 60
 
 

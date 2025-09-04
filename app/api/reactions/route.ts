@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 
 import { redis } from '~/lib/redis'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs' //by=>friday
 
 function getKey(id: string) {
   return `reactions:${id}`

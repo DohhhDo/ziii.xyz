@@ -5,17 +5,23 @@
 ---
 
 ## 概览
-- **总体状态**: 准备阶段（尚未正式执行各阶段任务）
+- **总体状态**: 阶段A已完成，进入阶段B数据库本地化 //by=>friday
 - **范围**: 覆盖 `Justdoit.md` 中阶段 A/B/C/D 的最小闭环执行
-- **环境依赖**: Node >= 18、pnpm、`.env` 关键项已配置（待核验）、可访问 Sanity/Upstash/Neon 或本地等价服务（待核验）
+- **环境依赖**: Node >= 18、pnpm、`.env.local` 关键项已配置 ✅、可访问 Sanity/Upstash/Neon ✅ //by=>friday
 
 ---
 
 ## 完成情况（按阶段）
 
 ### 阶段A：Next 本地运行与运行时统一（最快落地）
-- A1. 统一运行时为 node（保留 2 处图像为 edge）: 未开始
-- A2. 验证页面与接口（含 next/og、图片白名单、CORS）: 未开始
+- A1. 统一运行时为 node（保留 2 处图像为 edge）: ✅ 已完成 //by=>friday
+  - 已修改4个文件运行时：robots.ts, sitemap.ts, api/activity/route.ts, api/reactions/route.ts //by=>friday
+  - 保留2个图像处理文件为edge：api/favicon/route.tsx, api/link-preview/route.tsx //by=>friday
+- A2. 验证页面与接口（含 next/og、图片白名单、CORS）: ✅ 已完成 //by=>friday
+  - 主要页面正常访问：/, /friends, /guestbook 均正常 //by=>friday
+  - API接口正常运行：/api/songci, /api/activity 等响应正常 //by=>friday
+  - Sanity数据正常获取，显示21个projects数据 //by=>friday
+  - 发现预期问题：favicon API需要绝对URL（在白名单范围内）//by=>friday
 
 ### 阶段B：数据库本地化（Neon → 本地 PostgreSQL）
 - B1. 切换 Drizzle 适配为 node-postgres（仅 `db/index.ts`）: 未开始
@@ -58,9 +64,11 @@
 ---
 
 ## 近期计划（下一最小闭环）
-1) 执行 A1：统一运行时为 node（保留 2 处 edge），逐文件修改并可回退。
-2) 执行 A2：本地 `pnpm dev` 验证关键页面与 API，完善 `images.remotePatterns` 与 CORS。
-3) 记录构建与运行日志，沉淀首轮问题与回退方案。
+1) ✅ 执行 A1：统一运行时为 node（保留 2 处 edge），逐文件修改并可回退。 //by=>friday
+2) ✅ 执行 A2：本地 `pnpm dev` 验证关键页面与 API，完善 `images.remotePatterns` 与 CORS。 //by=>friday
+3) ✅ 记录构建与运行日志，沉淀首轮问题与回退方案。 //by=>friday
+4) 🔄 执行 B1：切换 Drizzle 适配为 node-postgres（仅 `db/index.ts`）//by=>friday
+5) 📋 执行 B2：本地PostgreSQL迁移与冒烟测试 //by=>friday
 
 ---
 

@@ -73,9 +73,10 @@
 ---
 
 ## 构建体检记录
-- 命令：`pnpm install && pnpm build`
-- 结果：未执行
-- 错误/警告：暂无
+- 命令：`pnpm install && pnpm build` //by=>friday
+- 结果：✅ 构建成功（Exit code: 0）//by=>friday
+- 错误/警告：LazyTremor组件警告、Edge Runtime警告（均不影响运行）//by=>friday
+- 构建产物大小：First Load JS 1.61MB，主页面 5.79kB //by=>friday
 
 ---
 
@@ -92,5 +93,11 @@
 - 完成：整理执行指导单与状态板，待启动 A1/A2。
 - 问题：无。
 - 计划：按「近期计划」推进 A1→A2，完成后更新本记录。
+
+### 2025-09-04 //by=>friday
+- 完成：✅ 阶段A全部完成（A1运行时统一 + A2功能验证 + 本地构建测试 + 部署包准备）//by=>friday
+- 问题：LazyTremor组件构建警告（不影响功能），favicon API相对路径问题（已知预期）//by=>friday
+- 成果：生成DEPLOY.md部署指导文档，构建产物已就绪 //by=>friday
+- 计划：等待服务器测试反馈，准备进入阶段B数据库本地化 //by=>friday
 
 
